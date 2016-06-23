@@ -45,7 +45,7 @@
              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                <span class="alert alert-danger" v-if="!mensaje">Escribe tu nombre putito <span class="glyphicon glyphicon-heart-empty"></span></span>
                <br>
-               <a href="#" class="btn btn-lg btn-default"><input type="text" v-model="mensaje" @keydown.enter="insertarUsuario"></a>
+               <a class="btn btn-lg btn-default"><input type="text" maxlength="20" v-model="mensaje" @keydown.enter="insertarUsuario"></a>
                <h6 v-show="mensaje" class="text-info">Pulsa ENTER para guardar!</h6>
              </div>
              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -95,7 +95,7 @@
       data:{
         debug: false,
         mensaje: '',
-        users:[{id:32165,nombre:'Ei.j Chavez'}]
+        users:[{id:88,nombre:'Ei.j Chavez'}]
       },
       methods:{
         insertarUsuario: function(){
