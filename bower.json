@@ -1,0 +1,22 @@
+{
+  "name": "vue",
+  "authors": [
+    "elib0 <elijose.c@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^1.0.25",
+    "bootstrap": "^3.3.6"
+  }
+}
