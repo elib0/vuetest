@@ -53,6 +53,7 @@
                 <li v-if="users.length < 1">No hay elementos agregados!</li>
                 <li v-for="user in users" class="text-capitalize animated" transition="bounce">{{ $index+1 }}.{{ user.nombre }} <button @click="borrarUsuario($index)" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button></li>
               </ul>
+              <button class="btn btn-default btn-xs" v-show="users.length > 0"><small @click="borrarUsuarios">borrar todos los usuarios</small></button>
              </div>
             </p>
             <br>
@@ -106,6 +107,11 @@
         },
         borrarUsuario: function (index) {
           this.users.splice(index, 1);
+        },
+        borrarUsuarios: function(){
+          if (confirm('Se borraran todos los usuarios agregados')) {
+            this.users = [];
+          }
         }
       }
     });
