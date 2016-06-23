@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "vue": "^1.0.25",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "animate.css": "^3.5.2"
   }
 }

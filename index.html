@@ -13,7 +13,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <!-- <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
@@ -38,7 +39,7 @@
           <div class="inner cover">
             <h1 class="cover-heading">Pruebas VUE.JS.</h1>
             <p class="lead">
-              Bienvenido {{ mensaje }}
+              <span v-show="mensaje">Palabra <strong>{{ mensaje }}</strong></span>
             </p>
             <p class="lead">
              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -49,7 +50,8 @@
              </div>
              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
               <ul class="text-left">
-                <li v-for="user in users" class="text-capitalize">{{ $index+1 }}.{{ user.nombre }} <button @click="borrarUsuario($index)" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button></li>
+                <li v-if="users.length < 1">No hay elementos agregados!</li>
+                <li v-for="user in users" class="text-capitalize animated" transition="bounce">{{ $index+1 }}.{{ user.nombre }} <button @click="borrarUsuario($index)" type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></button></li>
               </ul>
              </div>
             </p>
@@ -82,7 +84,11 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/vue/dist/vue.min.js"></script>
     <script>
-    Vue.config.devtools = true
+    Vue.config.devtools = true;
+    Vue.transition('bounce', {
+      enterClass: 'bounceInLeft',
+      leaveClass: 'bounceOutRight'
+    });
     var vm = new Vue({
       el: "#app",
       data:{
