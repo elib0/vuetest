@@ -3,10 +3,23 @@
   "version": "1.0.0",
   "description": "Pruebas Vue",
   "main": "index.html",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "animate.css": "github:daneden/animate.css",
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "vue": "^1.0.25",
+    "vue-select": "github:sagalbot/vue-select"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^1.5.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -17,8 +30,5 @@
   "bugs": {
     "url": "https://github.com/elib0/vuetest/issues"
   },
-  "homepage": "https://github.com/elib0/vuetest#readme",
-  "scripts": {
-    "postinstall" : "bower install"
-  },
+  "homepage": "https://github.com/elib0/vuetest#readme"
 }
